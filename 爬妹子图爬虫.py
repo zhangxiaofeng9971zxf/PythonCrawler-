@@ -19,9 +19,9 @@ def get_pic(pic_link):
 url ='http://www.meizitu.com/a/5557.html'
 html=download_page(url)
 soup = BeautifulSoup(html, 'html.parser')
-pic_list = soup.find('div',class_="postContent").find_all('img')#找到所有用img开头的
+pic_list = soup.find('div',class_="postContent").find_all('img')#在dic 这个标签下 找到img标签
 for i in pic_list:
-    pic_link = i.get('src')#或者src后的图片链接
+    pic_link = i.get('src')#在img标签中获取src后的值
     get_pic(pic_link)
 
 
